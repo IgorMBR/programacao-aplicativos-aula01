@@ -1,4 +1,4 @@
-/*Atividade 01
+//Atividade 01
 function somar(a, b) {
     return a + b;
 }
@@ -72,7 +72,7 @@ function exibirTabuada(numero) {
 console.log("\n=== EXERCÍCIO 3 ===");
 exibirTabuada(7);
 
-*/
+
 // EXERCÍCIO 4: CONTADOR DE PARES E ÍMPARES
 
 // Sua solução aqui:
@@ -103,3 +103,60 @@ console.log(resultado2); // Esperado: { pares: 4, impares: 0 }
 
 const resultado3 = contarParesImpares([1, 3, 5, 7, 9]);
 console.log(resultado3); // Esperado: { pares: 0, impares: 5 }
+
+
+// EXERCÍCIO 5: VALIDADOR DE SENHA (BÔNUS)
+
+// Sua solução aqui:
+
+var LetrasMaiusculas = /[A-Z]/;
+var LetrasMinusculas = /[a-z]/;
+var Numero = /[0-9]/;
+
+function validarSenha(senha) {
+    if (senha.length < 8) {
+        return false;
+    }  
+    if (!LetrasMaiusculas.test(senha)) {
+        return false;
+    }
+    if (!LetrasMinusculas.test(senha)) {
+        return false;
+    }
+    if (!Numero.test(senha)) {
+        return false;
+    }
+    return true;
+}
+    
+
+// Testes:
+console.log("\n=== EXERCÍCIO 5 (BÔNUS) ===");
+console.log(validarSenha("Abc12345"));   // Esperado: true
+console.log(validarSenha("abc12345"));   // Esperado: false
+console.log(validarSenha("ABC12345"));   // Esperado: false
+console.log(validarSenha("AbcDefgh"));   // Esperado: false
+console.log(validarSenha("Abc123"));     // Esperado: false
+
+// EXERCÍCIO 6: CONVERSOR DE TEMPERATURA (BÔNUS)
+
+// Sua solução aqui:
+
+function celsiusParaFahrenheit(celsius) {
+    return (celsius * 9/5) + 32;
+}
+function fahrenheitParaCelsius(fahrenheit) {
+    return (fahrenheit - 32) * 5/9;
+}
+function celsiusParaKelvin(celsius) {
+    return celsius + 273.15;
+}
+
+// Testes:
+console.log("\n=== EXERCÍCIO 6 (BÔNUS) ===");
+console.log(celsiusParaFahrenheit(0));      // Esperado: 32
+console.log(celsiusParaFahrenheit(100));    // Esperado: 212
+console.log(fahrenheitParaCelsius(32));     // Esperado: 0
+console.log(fahrenheitParaCelsius(212));    // Esperado: 100
+console.log(celsiusParaKelvin(0));          // Esperado: 273.15
+console.log(celsiusParaKelvin(100));        // Esperado: 373.15
